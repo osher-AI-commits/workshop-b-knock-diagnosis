@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7fb">
+  <title>מעבדת אבחון — נקישות בפנייה</title>
+  <style>
+    :root{font-family:"Segoe UI",Arial,sans-serif;color:#17243b;background:#f5f7fb;line-height:1.55}
+    *{box-sizing:border-box}body{margin:0}header{padding:2rem 1rem 1.5rem;color:white;background:linear-gradient(125deg,#17345b,#276b78)}
+    .wrap{width:min(940px,100%);margin:0 auto}h1{margin:.5rem 0;font-size:clamp(1.7rem,4vw,2.5rem)}h2{margin-top:0;font-size:1.25rem}
+    p{margin:.5rem 0 1rem}main{padding:1.25rem 1rem 3rem}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+    .card{margin:0 0 1rem;padding:1.2rem;border:1px solid #dce3ed;border-radius:14px;background:white;box-shadow:0 4px 16px #17345b0a}
+    .notice{border-right:5px solid #c47a12;background:#fff8e9}.eyebrow,.badge{display:inline-block;padding:.2rem .65rem;border-radius:999px;font-size:.88rem}
+    .eyebrow{border:1px solid #ffffff80}.badge{color:#17345b;background:#e7eef8;font-size:.82rem;font-weight:700}
+    label{display:block;margin:.75rem 0 .3rem;font-weight:650}select,textarea{width:100%;min-height:44px;padding:.65rem .75rem;border:1px solid #aebacc;border-radius:8px;color:inherit;background:white;font:inherit}
+    textarea{min-height:88px;resize:vertical}select:focus,textarea:focus,button:focus-visible{outline:3px solid #72b8c2;outline-offset:2px}
+    button{min-height:46px;margin-top:1rem;padding:.65rem 1rem;border:0;border-radius:8px;color:white;background:#175c70;font:inherit;font-weight:700;cursor:pointer}
+    button:hover{background:#10495a}.hint{color:#4b5a70;font-size:.93rem}.result{border-top:4px solid #276b78}.hypothesis{padding:.8rem 0;border-top:1px solid #e1e6ee}
+    .hypothesis h3{margin:0 0 .3rem;font-size:1.05rem}.hypothesis p{margin:.25rem 0}.steps{padding-inline-start:1.3rem}.steps li{margin:.45rem 0}[hidden]{display:none!important}
+    @media(max-width:650px){.grid{grid-template-columns:1fr;gap:0}.card{padding:1rem}header{padding-top:1.4rem}}
+  </style>
+</head>
+<body>
+  <header><div class="wrap"><span class="eyebrow">אב־טיפוס לימודי · ללא חיבור ל־API</span>
+    <h1>מעבדת אבחון: נקישות בפנייה חדה</h1>
+    <p>עוזר תרגול שמארגן רמזים, מציע כיווני בדיקה, ומזכיר מה עדיין צריך לאמת.</p>
+  </div></header>
+  <main class="wrap">
+    <section class="card notice" aria-labelledby="safety-title">
+      <h2 id="safety-title">לפני שמתחילים — בטיחות וגבולות</h2>
+      <p>זהו סימולטור לימודי מבוסס כללים, לא מערכת AI מאומנת ולא אבחון של רכב אמיתי. התוצאות הן השערות בלבד; אין להסתמך עליהן לתיקון או לנסיעה.</p>
+      <p>אין לשחזר תקלה בנסיעה לצורך התרגיל. בדיקה ברכב תיעשה רק לפי הוראות היצרן, במרחב בטוח ובהשגחת מורה או איש מקצוע מוסמך. אין להרים רכב או לפרק רכיבים ללא הכשרה וציוד מתאים.</p>
+    </section>
+    <div class="grid">
+      <section class="card" aria-labelledby="form-title">
+        <h2 id="form-title">1. אוספים תצפיות</h2>
+        <p class="hint">הזינו רק מידע שנצפה או נמסר. אם לא ידוע — השאירו את ברירת המחדל.</p>
+        <form id="diagnosis-form">
+          <label for="condition">מתי נשמעת הנקישה?</label>
+          <select id="condition" name="condition">
+            <option value="turn">בפנייה חדה</option><option value="straight">גם בנסיעה ישרה</option>
+            <option value="bump">במעבר על מהמורה</option><option value="brake">בזמן בלימה</option>
+            <option value="unknown" selected>לא ידוע / לא נבדק</option>
+          </select>
+          <label for="sound">איך נשמע הרעש?</label>
+          <select id="sound" name="sound">
+            <option value="clicks">נקישות חוזרות</option><option value="clunk">דפיקה בודדת או עמומה</option>
+            <option value="scrape">חריקה או חיכוך</option><option value="unknown" selected>לא ידוע</option>
+          </select>
+          <label for="side">מאיזה אזור הוא נשמע?</label>
+          <select id="side" name="side">
+            <option value="left">קדמי־שמאלי</option><option value="right">קדמי־ימני</option>
+            <option value="center">מרכז הרכב</option><option value="unknown" selected>לא ידוע</option>
+          </select>
+          <label for="steering">האם דווח על חופש או שינוי בתחושת ההיגוי?</label>
+          <select id="steering" name="steering">
+            <option value="yes">כן</option><option value="no">לא</option><option value="unknown" selected>לא ידוע</option>
+          </select>
+          <label for="notes">הערות נוספות (לא חובה)</label>
+          <textarea id="notes" name="notes" maxlength="400" placeholder="למשל: האם התיאור חוזר בדיווח קודם?"></textarea>
+          <p class="hint">ההערות אינן נשלחות או נשמרות.</p>
+          <button type="submit">ארגנו השערות ותוכנית בדיקה</button>
+        </form>
+      </section>
+      <section class="card" aria-labelledby="method-title">
+        <h2 id="method-title">2. כך עובדים בסדנה</h2>
+        <ol class="steps">
+          <li><strong>לפני העוזר:</strong> כל זוג רושם מה ידוע, מה לא ידוע ומה ההשערה הראשונית שלו.</li>
+          <li><strong>בעזרת העוזר:</strong> משווים בין הרמזים לבין כיווני בדיקה ומבקשים הסבר.</li>
+          <li><strong>בדיקת מקור:</strong> משווים כל רעיון לספרות היצרן או למקור מקצועי שהמורה סיפק.</li>
+          <li><strong>אימות:</strong> מתכננים בדיקה בטוחה; העוזר אינו קובע תקלה ואינו מחליף מדידה או איש מקצוע.</li>
+        </ol>
+        <p class="hint">בגרסה זו אין חיבור למודל, אין נתוני יצרן ואין חיישנים. התשובה מחושבת בדפדפן לפי כללי הדגמה גלויים.</p>
+      </section>
+    </div>
+    <section id="result" class="card result" aria-labelledby="result-title" aria-live="polite" tabindex="-1" hidden>
+      <h2 id="result-title">3. תוצאה לצורך למידה בלבד</h2>
+      <p id="result-summary"></p><p id="evidence-quality" class="hint"></p><p id="user-note" class="hint" hidden></p>
+      <div id="hypotheses"></div>
+      <h3>תוכנית אימות בטוחה</h3>
+      <ol class="steps">
+        <li>תעדו את תנאי הופעת הרעש מתוך דיווח קיים; אל תצאו לנסיעת מבחן כדי לשחזר אותו.</li>
+        <li>עיינו במפרט/ספר הרכב ובהנחיות שהמורה סיפק והשוו את התיאור למידע מתועד.</li>
+        <li>אם נדרשת בדיקה ברכב, המורה או איש מקצוע מוסמך יתכננו ויבצעו אותה בסביבה מבוקרת ובציוד מתאים.</li>
+      </ol>
+      <p class="hint">ההתאמה היא סדר עדיפות לשאלות המשך — לא הסתברות ולא אבחנה.</p>
+    </section>
+  </main>
+  <script>
+    const form=document.querySelector("#diagnosis-form");
+    const result=document.querySelector("#result");
+    const summary=document.querySelector("#result-summary");
+    const evidenceQuality=document.querySelector("#evidence-quality");
+    const userNote=document.querySelector("#user-note");
+    const hypothesesElement=document.querySelector("#hypotheses");
+    const candidates=[
+      {title:"מפרק או צירייה במערכת ההנעה",checks:[["condition","turn","הרעש דווח בפנייה חדה"],["sound","clicks","תוארו נקישות חוזרות"]],next:"בדקו בספרות היצרן אילו תסמינים ובדיקות מתאימים למפרקי ההנעה בדגם הרכב. בדיקת מצב גומיות או חופש תבוצע רק בידי איש מקצוע ובתנאים מתאימים."},
+      {title:"רכיב במתלה או במערכת ההיגוי",checks:[["condition","bump","הרעש דווח במעבר על מהמורה"],["sound","clunk","תוארה דפיקה בודדת או עמומה"],["steering","yes","דווח על שינוי בתחושת ההיגוי"]],next:"השוו את התיאור להנחיות היצרן על מפרקי מתלה והיגוי. בדיקת חופש תבוצע רק בידי איש מקצוע, עם תמיכה וציוד מתאימים."},
+      {title:"אזור הגלגל או הבלם",checks:[["condition","brake","הרעש דווח בזמן בלימה"],["sound","scrape","תואר חיכוך או חריקה"],["sideKnown",null,"צוין אזור שממנו נשמע הרעש"]],next:"בדקו את תיאור הרעש מול ספרות היצרן. אין לגעת בבלמים או בגלגל כשהרכב בתנועה; בדיקת רכיבים תיעשה רק בהשגחה מקצועית."}
+    ];
+    function renderHypothesis(candidate){
+      const article=document.createElement("article");article.className="hypothesis";
+      const title=document.createElement("h3");title.textContent=candidate.title;article.append(title);
+      const relevance=document.createElement("p");const badge=document.createElement("span");badge.className="badge";badge.textContent=candidate.matched.length?"יש רמזים לבדיקה":"נדרש מידע נוסף";relevance.append(badge);article.append(relevance);
+      const evidence=document.createElement("p");evidence.textContent=candidate.matched.length?`רמזים מתאימים: ${candidate.matched.join("; ")}.`:"אין כרגע רמז ספציפי שמחזק כיוון זה.";article.append(evidence);
+      const next=document.createElement("p");next.textContent=`שאלת/בדיקת המשך מול מקור מקצועי: ${candidate.next}`;article.append(next);return article;
+    }
+    form.addEventListener("submit",event=>{
+      event.preventDefault();
+      const observations=Object.fromEntries(new FormData(form).entries());
+      const ranked=candidates.map(candidate=>{
+        const matched=candidate.checks.filter(([field,value])=>field==="sideKnown"?observations.side!=="unknown":observations[field]===value).map(([, ,description])=>description);
+        return {...candidate,matched};
+      }).sort((a,b)=>b.matched.length-a.matched.length);
+      const knownClues=["condition","sound","side","steering"].filter(field=>observations[field]!=="unknown").length;
+      summary.textContent="על סמך התיאור שסופק, אלה כיווני בדיקה אפשריים בלבד. אין לבחור חלק להחלפה על בסיס הפלט.";
+      evidenceQuality.textContent=knownClues<2?"יש מעט מידע מבחין. התחילו באיסוף תצפיות קיימות ושאלות הבהרה; אל תנסו לשחזר את התקלה בנסיעה.":`נמסרו ${knownClues} פרטי תצפית. התאמה לרמזים אינה מוכיחה קשר סיבתי.`;
+      userNote.textContent=observations.notes?`הערה לדיון: ${observations.notes}`:"";userNote.hidden=!observations.notes;
+      hypothesesElement.replaceChildren(...ranked.map(renderHypothesis));result.hidden=false;result.focus();
+    });
+  </script>
+</body>
+</html>
