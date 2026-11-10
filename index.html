@@ -13,6 +13,9 @@
     .card{margin:0 0 1rem;padding:1.2rem;border:1px solid #dce3ed;border-radius:14px;background:white;box-shadow:0 4px 16px #17345b0a}
     .notice{border-right:5px solid #c47a12;background:#fff8e9}.eyebrow,.badge{display:inline-block;padding:.2rem .65rem;border-radius:999px;font-size:.88rem}
     .eyebrow{border:1px solid #ffffff80}.badge{color:#17345b;background:#e7eef8;font-size:.82rem;font-weight:700}
+    nav{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1rem}
+    nav a{padding:.35rem .7rem;border:1px solid #ffffff80;border-radius:999px;color:white;text-decoration:none}
+    nav a:hover,nav a:focus-visible{background:#ffffff20}
     label{display:block;margin:.75rem 0 .3rem;font-weight:650}select,textarea{width:100%;min-height:44px;padding:.65rem .75rem;border:1px solid #aebacc;border-radius:8px;color:inherit;background:white;font:inherit}
     textarea{min-height:88px;resize:vertical}select:focus,textarea:focus,button:focus-visible{outline:3px solid #72b8c2;outline-offset:2px}
     button{min-height:46px;margin-top:1rem;padding:.65rem 1rem;border:0;border-radius:8px;color:white;background:#175c70;font:inherit;font-weight:700;cursor:pointer}
@@ -25,6 +28,11 @@
   <header><div class="wrap"><span class="eyebrow">אב־טיפוס לימודי · ללא חיבור ל־API</span>
     <h1>מעבדת אבחון: נקישות בפנייה חדה</h1>
     <p>עוזר תרגול שמארגן רמזים, מציע כיווני בדיקה, ומזכיר מה עדיין צריך לאמת.</p>
+    <nav aria-label="דפי סדנה ב׳">
+      <a href="worksheet.html">תשובות סדנה ב׳</a>
+      <a href="spec.html">אפיון</a>
+      <a href="backlog.html">משימות הספרינט</a>
+    </nav>
   </div></header>
   <main class="wrap">
     <section class="card notice" aria-labelledby="safety-title">

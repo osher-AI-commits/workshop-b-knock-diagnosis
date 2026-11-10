@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7fb">
+  <title>אפיון — עוזר לימודי לאבחון</title>
+  <style>
+    :root{font-family:"Segoe UI",Arial,sans-serif;color:#17243b;background:#f5f7fb;line-height:1.65}
+    *{box-sizing:border-box}body{margin:0}header{padding:1.7rem 1rem;color:#fff;background:linear-gradient(125deg,#17345b,#276b78)}
+    main{width:min(900px,100%);margin:auto;padding:1.25rem 1rem 3rem}h1{margin:.4rem 0;font-size:clamp(1.6rem,4vw,2.3rem)}h2{margin-top:0;color:#17345b}
+    .nav{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem}.nav a{padding:.35rem .7rem;border:1px solid #ffffff80;border-radius:999px;color:white;text-decoration:none}
+    section{margin:1rem 0;padding:1.2rem;border:1px solid #dce3ed;border-radius:14px;background:white}
+    table{width:100%;border-collapse:collapse}th,td{padding:.7rem;border:1px solid #dce3ed;text-align:right;vertical-align:top}th{background:#eaf1f6}
+    ul,ol{padding-inline-start:1.5rem}li{margin:.35rem 0}.note{border-right:4px solid #c47a12;background:#fff8e9}
+    @media(max-width:600px){section{padding:1rem}table{font-size:.92rem}}
+  </style>
+</head>
+<body>
+  <header><div>
+    <span>סדנה ב׳ · מסמך אפיון</span>
+    <h1>עוזר לימודי לאבחון נקישות בפנייה חדה</h1>
+    <p>תכנון למידה, גבולות המערכת ודרישות שאפשר לבדוק</p>
+    <nav class="nav" aria-label="דפי סדנה ב׳">
+      <a href="./">אב־טיפוס</a><a href="worksheet.html">תשובות סדנה ב׳</a><a href="backlog.html">משימות הספרינט</a>
+    </nav>
+  </div></header>
+  <main>
+    <section><h2>1. הקשר ומטרה</h2>
+      <p>המשך להתנסות מסדנה א׳: תלמידים בזוגות לומדים לברר דיווח על נקישות בפנייה חדה ברכב הדרכה, לבנות השערות ולתכנן אימות פיזיקלי בטוח במסגרת של שלושה שיעורים. האב־טיפוס מארגן תצפיות ומציג שאלות וכיווני בדיקה ללמידה; הוא אינו מאבחן רכב ואינו מחליף ספרות יצרן או איש מקצוע.</p>
+    </section>
+    <section><h2>2. משתמשים ויחידת הלמידה</h2>
+      <ul>
+        <li><strong>משתמשים:</strong> תלמידי תחבורה/מכונאות רכב בזוגות; המורה מנחה ומוודא בטיחות.</li>
+        <li><strong>ידע ומיומנויות:</strong> הבחנה בין תצפית להשערה, קריאת מידע טכני, הסבר מבוסס רמזים ותכנון בדיקה מבוקרת.</li>
+        <li><strong>תפקיד העוזר:</strong> לארגן פרטים, להציג כיווני בדיקה אפשריים ולהבליט מידע חסר. התלמידים בודקים מול מקור מקצועי ומקבלים את ההחלטה.</li>
+        <li><strong>סביבת שימוש:</strong> דפדפן במחשב או בטלפון, ללא התקנה.</li>
+        <li><strong>נתונים ואינטגרציות:</strong> נתוני הדגמה בלבד; אין API, מודל AI, שמירת מידע או נתוני יצרן. הלוגיקה היא כללי המחשה שקופים.</li>
+      </ul>
+    </section>
+    <section class="note"><h2>3. גבולות ובטיחות</h2>
+      <ul>
+        <li>כל פלט הוא השערה לימודית, לא הסתברות ולא אבחנה.</li>
+        <li>אין הוראות לנסיעת מבחן, לשחזור תקלה, לפירוק או להרמת רכב.</li>
+        <li>בדיקה ברכב, אם נדרשת, תתוכנן ותבוצע לפי הוראות היצרן ובהשגחת מורה/איש מקצוע מוסמך ובציוד מתאים.</li>
+        <li>בלי מפרט יצרן ונתוני רכב, המערכת אינה קובעת התאמה לדגם או חלק שיש להחליף.</li>
+      </ul>
+    </section>
+    <section><h2>4. דרישות ממוספרות ודרך בדיקה</h2>
+      <table><thead><tr><th>#</th><th>דרישה</th><th>דרך בדיקה/קבלה</th></tr></thead><tbody>
+        <tr><td>1</td><td>הזנת ארבע תצפיות: תנאי הופעת רעש, סוג, אזור מקור משוער ותחושת היגוי.</td><td>בחירת ערכים ושליחה; הטופס מציג תוצאה בעברית וברירת המחדל „לא ידוע”.</td></tr>
+        <tr><td>2</td><td>הצגת עד שלושה כיווני בדיקה, רמזים או ציון שאין רמז, ושאלת המשך — בלי מסקנה ודאית או הסתברות.</td><td>בדיקת נקישות בפנייה, דפיקה במהמורה ומקרה ללא מידע.</td></tr>
+        <tr><td>3</td><td>הצגת גבולות שימוש והנחיית בטיחות; פעולה נגישה וללא רשת.</td><td>פתיחה מקומית, RTL, תוויות, ניווט מקלדת והודעת בטיחות; היעדר בקשות רשת ושמירת מידע.</td></tr>
+      </tbody></table>
+    </section>
+    <section><h2>5. אב־טיפוס מינימלי לספרינט הראשון</h2>
+      <p>דף HTML עצמאי עם טופס לתצפיות, כללי מיון שקופים, שאלת המשך לכל כיוון ותוכנית אימות בטוחה. מדגימים תיאור של נקישות בפנייה ומשווים את הפלט למקור שהמורה סיפק.</p>
+      <p><strong>מה פועל:</strong> טופס, מיון רמזים לפי כללים קבועים, הסברים ותזכורות בטיחות.</p>
+      <p><strong>מה מדומה:</strong> „העוזר” וכל הידע הטכני; אין מודל AI או נתוני רכב.</p>
+      <p><strong>מה חסר:</strong> מפרטי יצרן לדגם מסוים, מקורות מאומתים, בדיקה אמיתית וולידציה מקצועית.</p>
+    </section>
+    <section><h2>6. מהלך למידה בשלושה שיעורים</h2>
+      <ol>
+        <li><strong>שיעור 1 — תצפית ואפיון:</strong> כל זוג רושם מה ידוע ומה חסר ומה ההשערה הראשונית, ואז ממלא את הטופס ומשווה.</li>
+        <li><strong>שיעור 2 — בדיקת השערות:</strong> הזוג בודק כל כיוון במקור מקצועי, מתעד חיזוק/הפרכה/מידע חסר ומשלים תוכנית אימות.</li>
+        <li><strong>שיעור 3 — הצגה ושיפור:</strong> הצגת תצפיות, השערות, מקורות ותוכנית אימות; משוב עמיתים וסיכום מגבלות העוזר.</li>
+      </ol>
+    </section>
+    <section><h2>7. הכנות לשיעור</h2>
+      <ul>
+        <li>להכין תיאור מקרה כתוב ומאומת; לא להשתמש בנסיעת מבחן ליצירת סימפטום.</li>
+        <li>לספק מקור יצרן או דף מפרט מתאים לרכב ההדרכה.</li>
+        <li>לוודא שהדמו נפתח ללא רשת ושאין בו פרטי תלמידים או מידע שנשלח החוצה.</li>
+        <li>להגדיר מראש תחום, אחראי, ציוד, סיכונים ואישור מורה לכל בדיקה פיזיקלית.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
